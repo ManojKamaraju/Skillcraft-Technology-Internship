@@ -1,34 +1,77 @@
-# Skillcraft-Technology-Internship
-# Hand Gesture Recognition using Deep Learning
+# Skillcraft Technology Internship – Machine Learning Projects
 
-This project implements a deep learning-based hand gesture recognition system using PyTorch. It is designed to classify hand gestures from image data using a custom convolutional neural network.
+This repository contains machine learning projects completed during the Skillcraft Technology Internship. Each task focuses on a core ML concept applied to real-world data.
 
-## 📌 Features
+---
 
-- Image classification using a lightweight CNN.
-- Dataset loading via `torchvision.datasets.ImageFolder`.
-- Custom train-test split and mini-batch processing with `DataLoader`.
-- GPU acceleration using CUDA (if available).
-- Easily extensible architecture for deployment or further training.
+## 📌 Task 1: Linear Regression
 
+**Objective:** Predict a continuous variable using one or more features.
 
+**Model:**  
+Simple Linear Regression:  
+`y = β₀ + β₁x + ε`  
+Multiple Linear Regression:  
+`y = β₀ + β₁x₁ + β₂x₂ + ... + βₙxₙ + ε`
 
-- The model currently supports 5 gesture classes.
-- Images are automatically converted to tensors using `ToTensor()` transformation.
+**Use Case:** Predict house prices or similar metrics.
 
-## 🧠 Model Architecture
+---
 
-A simple CNN structure:
-- `Conv2d` layer with 32 filters, kernel size 3
-- `MaxPool2d` layer
-- `ReLU` activation
-- `LazyLinear` output layer with 5 units (gesture classes)
+## 📌 Task 2: K-Means Clustering
 
-## 🏃‍♂️ Training
+**Objective:** Segment customers into groups based on features.
 
-- Loss Function: `CrossEntropyLoss`
-- Optimizer: `Adam`, learning rate = 0.001
+**Steps:**
+- Initialize `K` clusters
+- Assign data to nearest centroid
+- Update centroids
+- Repeat until stable
+
+**Features Used:**
+- Age
+- Annual Income
+- Spending Score
+
+**Evaluation:** Silhouette Score
+
+---
+
+## 📌 Task 3: Cat vs Dog Classification (SVM + Feature Extraction)
+
+**Objective:** Classify images as cat or dog using traditional ML.
+
+**Steps:**
+- Load images using PyTorch
+- Apply MaxPooling and flattening
+- Train Linear SVM on features
+- Evaluate with classification report
+
+---
+
+## 📌 Task 4: Hand Gesture Recognition (CNN)
+
+**Objective:** Classify hand gestures using a CNN model.
+
+**Model:**
+- Conv2D (32 filters, kernel size 3)
+- MaxPooling
+- ReLU
+- LazyLinear (5 output classes)
+
+**Training:**
+- Loss: CrossEntropyLoss
+- Optimizer: Adam (lr=0.001)
 - Epochs: 10
-- Batch Size: 32
+- Batch size: 32
+
+**Features:**
+- 5 gesture classes
+- Dataset loaded with `ImageFolder`
+- GPU support with CUDA
 
 
+
+## Acknowledgment
+
+Developed under the Skillcraft Technology Internship to build practical machine learning skills.
