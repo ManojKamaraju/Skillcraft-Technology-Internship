@@ -1,26 +1,54 @@
 # Skillcraft-Technology-Internship
-# 📊 Linear Regression – A Fundamental Approach to Predictive Modeling
+# 📌 K-Means Clustering – Customer Segmentation Analysis
 
 ## 🔍 Overview
 
-**Linear Regression** is one of the most fundamental and widely used algorithms in supervised machine learning. It models the relationship between one or more independent variables (features) and a continuous dependent variable (target) by fitting a linear equation to observed data.
-
-This project demonstrates the implementation of a **Linear Regression** model applied to a real-world dataset (e.g., house prices), as part of **Task 1** for the **Skill Craft Technology Internship**.
+This project implements **K-Means Clustering** to segment customers based on key features, as part of **Task 2** of the **Skill Craft Technology Internship**. Unsupervised machine learning is used to identify distinct groups of customers, helping businesses target each segment more effectively.
 
 ---
 
-## 📚 What is Linear Regression?
+## 📚 What is K-Means Clustering?
 
-Linear Regression estimates the relationship between variables by fitting a line (or hyperplane) that best describes how the dependent variable changes with respect to the independent variable(s).
+**K-Means** is an unsupervised clustering algorithm that partitions a dataset into *K distinct non-overlapping clusters*. Each data point belongs to the cluster with the nearest mean, serving as a prototype of the cluster.
 
-### 📈 Equation of a Simple Linear Regression:
-y = β₀ + β₁x + ε
-Where:
-- `y` = dependent variable (e.g., house price)
-- `x` = independent variable (e.g., square footage)
-- `β₀` = intercept
-- `β₁` = coefficient/slope
-- `ε` = error term
+### ⚙️ Algorithm Steps:
 
-For **Multiple Linear Regression**, the model generalizes to:
-y = β₀ + β₁x₁ + β₂x₂ + ... + βₙxₙ + ε
+1. Initialize `K` cluster centroids.
+2. Assign each point to the nearest centroid.
+3. Recompute centroids based on cluster members.
+4. Repeat steps 2–3 until convergence.
+
+---
+
+## 🧠 Objective
+
+To group customers based on selected features (e.g., income, age, etc.) using K-Means, and evaluate the quality of clusters using the **Silhouette Score**.
+
+---
+
+## 📁 Dataset
+
+The dataset used (`data.csv`) contains customer attributes such as:
+
+- `Age`
+- `Annual Income`
+- `Spending Score (1-100)`
+
+> The target column (`Spending Score`) is dropped before clustering to maintain the unsupervised learning approach.
+
+---
+
+## 🧪 Evaluation Metric
+
+- **Silhouette Score**: Measures how well each data point fits within its cluster. A value near **+1** indicates good clustering.
+
+---
+
+## 🧾 Project Steps
+
+1. **Load and inspect the dataset** using `pandas`.
+2. **Preprocess data** by removing the target variable.
+3. **Train KMeans** using scikit-learn with `n_clusters=2`.
+4. **Evaluate cluster quality** using the silhouette score.
+5. Optionally visualize clusters using `matplotlib` and `seaborn`.
+
