@@ -1,33 +1,34 @@
 # Skillcraft-Technology-Internship
-# 🐾 Cat vs Dog Classification using Feature Extraction and SVM
+# Hand Gesture Recognition using Deep Learning
 
-## 🔍 Overview
+This project implements a deep learning-based hand gesture recognition system using PyTorch. It is designed to classify hand gestures from image data using a custom convolutional neural network.
 
-This project implements an image classification model to distinguish between cats and dogs. The model uses basic feature extraction techniques (MaxPooling and Flatten) followed by a **Support Vector Machine (SVM)** classifier. This is a classical approach that combines deep learning-based feature representation with traditional machine learning classifiers.
+## 📌 Features
 
----
+- Image classification using a lightweight CNN.
+- Dataset loading via `torchvision.datasets.ImageFolder`.
+- Custom train-test split and mini-batch processing with `DataLoader`.
+- GPU acceleration using CUDA (if available).
+- Easily extensible architecture for deployment or further training.
 
-## 🧠 Objective
 
-To classify images of cats and dogs using extracted features and train a linear SVM classifier on those features for accurate prediction.
 
----
+- The model currently supports 5 gesture classes.
+- Images are automatically converted to tensors using `ToTensor()` transformation.
 
-## 🧾 Methodology
+## 🧠 Model Architecture
 
-1. **Dataset Loading**: Images are loaded using `ImageFolder` from PyTorch, assuming each class (cat/dog) is in its respective subdirectory.
+A simple CNN structure:
+- `Conv2d` layer with 32 filters, kernel size 3
+- `MaxPool2d` layer
+- `ReLU` activation
+- `LazyLinear` output layer with 5 units (gesture classes)
 
-2. **Feature Extraction**:
-   - Input images are transformed into tensors.
-   - A custom `FeatureExtractor` applies MaxPooling to reduce dimensionality.
-   - Flattened outputs serve as feature vectors for classification.
+## 🏃‍♂️ Training
 
-3. **Model Training**:
-   - Features and labels are extracted from the entire dataset.
-   - The dataset is split into training and testing sets.
-   - A linear SVM classifier is trained using `scikit-learn`.
+- Loss Function: `CrossEntropyLoss`
+- Optimizer: `Adam`, learning rate = 0.001
+- Epochs: 10
+- Batch Size: 32
 
-4. **Evaluation**:
-   - Predictions are made on the test set.
-   - `classification_report` is used to measure precision, recall, and F1-score.
 
